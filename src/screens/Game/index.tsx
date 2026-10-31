@@ -25,7 +25,7 @@ export function Game() {
   const game = route.params as GameParams;
 
   useEffect(() => {
-    fetch(`http://192.168.0.22:3333/games/${game.id}/ads`)
+    fetch(`http://localhost:3333/games/${game.id}/ads`)
       .then(response => response.json())
       .then(data => (
         setDuos(data)
@@ -37,7 +37,7 @@ export function Game() {
   }
 
   async function getDiscordUser(adsId: string) {
-    fetch(`http://192.168.0.22:3333/ads/${adsId}/discord`)
+    fetch(`http://localhost:3333/ads/${adsId}/discord`)
       .then(response => response.json())
       .then(data => (
         setDiscordDuoSelected(data.discord)
